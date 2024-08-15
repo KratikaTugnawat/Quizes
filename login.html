@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <h1>Quiz Application</h1>
+
+        <!-- Login Form -->
+        <div id="login-form" class="form-container">
+            <h2>Login</h2>
+            <form>
+                <label for="login-username">Username:</label>
+                <input type="text" id="login-username" required>
+                <label for="login-password">Password:</label>
+                <input type="password" id="login-password" required>
+                <button type="button" onclick="login()">Login</button>
+                <p>Don't have an account? <a href="#" onclick="showSignup()">Sign up</a></p>
+            </form>
+        </div>
+
+        <!-- Signup Form -->
+        <div id="signup-form" class="form-container" style="display: none;">
+            <h2>Sign Up</h2>
+            <form>
+                <label for="signup-username">Username:</label>
+                <input type="text" id="signup-username" required>
+                <label for="signup-password">Password:</label>
+                <input type="password" id="signup-password" required>
+                <button type="button" onclick="signup()">Sign Up</button>
+                <p>Already have an account? <a href="#" onclick="showLogin()">Login</a></p>
+            </form>
+        </div>
+
+        <!-- Create Quiz Questions -->
+        <div id="create-quiz-section" class="form-container" style="display: none;">
+            <h2>Create Quiz Questions</h2>
+            <form id="create-quiz-form">
+                <label for="question-text">Question:</label>
+                <input type="text" id="question-text" required>
+                <label for="option1">Option 1:</label>
+                <input type="text" id="option1" required>
+                <label for="option2">Option 2:</label>
+                <input type="text" id="option2" required>
+                <label for="option3">Option 3:</label>
+                <input type="text" id="option3" required>
+                <label for="correct-option">Correct Option:</label>
+                <input type="number" id="correct-option" min="1" max="3" required>
+                <button type="button" onclick="addQuestion()">Add Question</button>
+            </form>
+            <!-- <button type="button" onclick="showQuiz()">Take Quiz</button> -->
+            <button type="button" onclick="showAvailableQuizzes()">View Available Quizzes</button>
+
+        </div>
+         <!-- View Available Quizzes Section -->
+         <div id="available-quizzes-section" class="form-container" style="display: none;">
+            <h2>Available Quizzes</h2>
+            <ul id="quizzes-list"></ul>
+            <button type="button" onclick="showCreateQuiz()">Create New Quiz</button>
+            <!-- <button type="button" onclick="logout()">Logout</button> -->
+        </div>
+        <!-- Quiz Section -->
+        <div id="quiz-section" class="form-container" style="display: none;">
+            <h2>Take Quiz</h2>
+            <form id="quiz-form">
+                <!-- Questions will be inserted here by JavaScript -->
+            </form>
+            <button type="button" onclick="submitQuiz()">Submit Quiz</button>
+        </div>
+         
+
+        <!-- Results Section -->
+        <div id="results-section" class="form-container" style="display: none;">
+            <h2>Results</h2>
+            <p id="score"></p>
+            <button type="button" onclick="showCreateQuiz()">Create New Quiz</button>
+            <button type="button" onclick="showScores()">View All Scores</button>
+        </div>
+
+        <!-- All Scores Section -->
+        <div id="scores-section" class="form-container" style="display: none;">
+            <h2>All Scores</h2>
+            <ul id="scores-list"></ul>
+            <button type="button" onclick="showCreateQuiz()">Back to Create Quiz</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
+ 
